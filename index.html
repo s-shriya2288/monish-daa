@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Question Paper Analysis Report - 21CSC204J</title>
+    <style>
+        :root {
+            --primary-dark: #1a3c6e;
+            --primary-blue: #2c5ba1;
+            --light-blue: #e7f3fe;
+            --border-color: #b3cde0;
+            --high-freq: #ffcccc;
+            --numerical-color: #d9534f;
+        }
+
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; background-color: #f0f4f8; padding: 40px 20px; }
+        .container { max-width: 1100px; margin: auto; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        
+        header { background-color: var(--primary-dark); color: white; padding: 30px; border-radius: 8px; margin-bottom: 30px; text-align: center; }
+        header h1 { margin: 0; font-size: 28px; text-transform: uppercase; letter-spacing: 1px; }
+        header p { margin: 10px 0 0; opacity: 0.9; font-weight: 300; }
+
+        .note-section { background-color: var(--light-blue); border-left: 6px solid var(--primary-dark); padding: 20px; margin-bottom: 30px; border-radius: 4px; }
+        
+        .toc { background: #fdfdfd; padding: 20px; border: 1px solid #ddd; border-radius: 8px; margin-bottom: 40px; }
+        .toc h3 { margin-top: 0; color: var(--primary-dark); border-bottom: 1px solid #ddd; padding-bottom: 10px; }
+        .toc ul { list-style: none; padding: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+        .toc a { color: var(--primary-blue); text-decoration: none; font-weight: 600; }
+        .toc a:hover { text-decoration: underline; }
+
+        h2 { color: var(--primary-dark); border-bottom: 3px solid var(--primary-dark); padding-bottom: 10px; margin-top: 50px; display: flex; align-items: center; }
+        h2::before { content: "📘"; margin-right: 15px; }
+
+        table { width: 100%; border-collapse: collapse; margin-bottom: 30px; box-shadow: 0 2px 15px rgba(0,0,0,0.05); }
+        th, td { padding: 15px; text-align: left; border: 1px solid var(--border-color); }
+        th { background-color: var(--primary-dark); color: white; font-weight: 600; text-transform: uppercase; font-size: 0.9em; }
+        tr:nth-child(even) { background-color: #f9fbff; }
+        tr:hover { background-color: #f1f4f9; }
+
+        .high { background-color: var(--high-freq) !important; font-weight: bold; border: 2px solid #ff9999; }
+        .star { color: var(--numerical-color); font-weight: bold; margin-right: 5px; }
+        
+        .mcq-container { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 20px; }
+        .freq-list { list-style: none; padding: 0; }
+        .freq-item { display: flex; justify-content: space-between; padding: 12px; border-bottom: 1px ridge #eee; }
+        .badge { background: var(--primary-dark); color: white; padding: 4px 12px; border-radius: 20px; font-size: 0.85em; }
+
+        .weightage-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin-top: 25px; }
+        .unit-card { border: 1px solid var(--primary-dark); border-radius: 8px; padding: 20px; background: #fff; transition: transform 0.2s; }
+        .unit-card:hover { transform: translateY(-5px); border-width: 2px; }
+        .unit-card h3 { margin: 0 0 10px 0; color: var(--primary-dark); font-size: 1.1em; }
+        .hot-topic { color: #d93025; font-weight: bold; display: block; margin-top: 10px; }
+
+        footer { text-align: center; margin-top: 50px; color: #777; font-size: 0.9em; border-top: 1px solid #ddd; padding-top: 20px; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Question Paper Analysis Report</h1>
+        <p>Subject: 21CSC204J - Design and Analysis of Algorithms (DAA)</p>
+    </header>
+
+    <div class="note-section">
+        <strong>Master Analysis Context:</strong> This report is generated based on 5 consecutive semesters: 
+        <em>DEC 2025, MAY 2025, NOV 2024, JUL 2023, and MAY 2023.</em>
+    </div>
+
+    <div class="toc">
+        <h3>Quick Navigation</h3>
+        <ul>
+            <li><a href="#u1">Unit I: Basics & Asymptotics</a></li>
+            <li><a href="#u2">Unit II: Divide & Conquer</a></li>
+            <li><a href="#u3">Unit III: Greedy & DP</a></li>
+            <li><a href="#u4">Unit IV: Backtracking & B&B</a></li>
+            <li><a href="#u5">Unit V: Randomization & NP</a></li>
+            <li><a href="#mcq">Part A (MCQ) Bank</a></li>
+            <li><a href="#summary">Hot Topics & Weightage</a></li>
+        </ul>
+    </div>
+
+    <h2 id="u1">Unit I: Introduction & Asymptotic Analysis</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Sub-topic</th>
+                <th>Marks</th>
+                <th>Exam Occurrences</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="high">
+                <td>Asymptotic Notations (O, Ω, Θ properties)</td>
+                <td>8 / 15</td>
+                <td>DEC 2025, NOV 2024, MAY 2023</td>
+                <td>Conceptual</td>
+            </tr>
+            <tr>
+                <td>Master's Theorem Calculations</td>
+                <td>8</td>
+                <td>DEC 2025, MAY 2025</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+            <tr>
+                <td>Substitution / Recurrence Tree Method</td>
+                <td>7</td>
+                <td>JUL 2023</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+            <tr>
+                <td>Algorithm Efficiency & Pseudo Code</td>
+                <td>8</td>
+                <td>MAY 2023</td>
+                <td>Theory</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 id="u2">Unit II: Divide and Conquer</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Sub-topic</th>
+                <th>Marks</th>
+                <th>Exam Occurrences</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="high">
+                <td>Strassen’s Matrix Multiplication</td>
+                <td>8 / 15</td>
+                <td>DEC 2025, MAY 2025, NOV 2024</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+            <tr class="high">
+                <td>Quick Sort (Analysis & Trace)</td>
+                <td>15</td>
+                <td>MAY 2025, MAY 2023, JUL 2023</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+            <tr>
+                <td>Convex Hull / QuickHull Problem</td>
+                <td>8</td>
+                <td>NOV 2024</td>
+                <td>Conceptual</td>
+            </tr>
+            <tr>
+                <td>Binary Search (Recursive Analysis)</td>
+                <td>8</td>
+                <td>JUL 2023</td>
+                <td>Theory</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 id="u3">Unit III: Greedy & Dynamic Programming</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Sub-topic</th>
+                <th>Marks</th>
+                <th>Exam Occurrences</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="high">
+                <td>Minimum Spanning Tree (Prims / Kruskals)</td>
+                <td>8 / 15</td>
+                <td>MAY 2023, JUL 2023, NOV 2024</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+            <tr>
+                <td>Matrix Chain Multiplication</td>
+                <td>15</td>
+                <td>MAY 2025</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+            <tr>
+                <td>Optimal Binary Search Tree (OBST)</td>
+                <td>15</td>
+                <td>DEC 2025</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+            <tr>
+                <td>Huffman Coding</td>
+                <td>8</td>
+                <td>MAY 2025</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 id="u4">Unit IV: Backtracking, Branch and Bound</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Sub-topic</th>
+                <th>Marks</th>
+                <th>Exam Occurrences</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="high">
+                <td>N-Queens Problem (4 or 8 Queens)</td>
+                <td>15</td>
+                <td>MAY 2023, DEC 2025, JUL 2023</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+            <tr class="high">
+                <td>Traveling Salesman Problem (B&B)</td>
+                <td>8</td>
+                <td>NOV 2024, MAY 2025</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+            <tr>
+                <td>Hamiltonian Cycle</td>
+                <td>15</td>
+                <td>JUL 2023</td>
+                <td>Trace</td>
+            </tr>
+            <tr>
+                <td>Sum of Subsets</td>
+                <td>8</td>
+                <td>JUL 2023</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 id="u5">Unit V: Randomized & NP Theory</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Sub-topic</th>
+                <th>Marks</th>
+                <th>Exam Occurrences</th>
+                <th>Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="high">
+                <td>NP-Hard vs NP-Complete (Definitions)</td>
+                <td>8</td>
+                <td>MAY 2023, NOV 2024, JUL 2023</td>
+                <td>Theory</td>
+            </tr>
+            <tr class="high">
+                <td>Randomized Quick Sort Analysis</td>
+                <td>8</td>
+                <td>NOV 2024, MAY 2023, DEC 2025</td>
+                <td>Theory</td>
+            </tr>
+            <tr>
+                <td>Rabin-Karp String Matching</td>
+                <td>8</td>
+                <td>MAY 2025, JUL 2023</td>
+                <td><span class="star">★</span> Numerical</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 id="mcq">Part A: MCQ Bank Analysis</h2>
+    <div class="mcq-container">
+        <p>Highly recurring concepts in 1-mark questions:</p>
+        <div class="freq-list">
+            <div class="freq-item"><span>Growth Rate ordering of functions (O(1) < log n < n...)</span> <span class="badge">Asked in 5/5 Papers</span></div>
+            <div class="freq-item"><span>Insertion Sort Best Case Complexity [O(n)]</span> <span class="badge">Asked in 3/5 Papers</span></div>
+            <div class="freq-item"><span>Master's Theorem case identification</span> <span class="badge">Asked in 3/5 Papers</span></div>
+            <div class="freq-item"><span>N-Queens Chess-related logic</span> <span class="badge">Asked in 2/5 Papers</span></div>
+            <div class="freq-item"><span>Binary Search worst-case recurrence</span> <span class="badge">Asked in 2/5 Papers</span></div>
+        </div>
+    </div>
+
+    <h2 id="summary">Weightage Hierarchy & Hot Topics</h2>
+    <div class="weightage-grid">
+        <div class="unit-card">
+            <h3>Unit I</h3>
+            <span>Weightage: 15%</span>
+            <span class="hot-topic">Asymptotic Bounds & Master's Theorem.</span>
+        </div>
+        <div class="unit-card">
+            <h3>Unit II</h3>
+            <span>Weightage: 25%</span>
+            <span class="hot-topic">Strassen's Matrix & Quick Sort Trace.</span>
+        </div>
+        <div class="unit-card">
+            <h3>Unit III</h3>
+            <span>Weightage: 20%</span>
+            <span class="hot-topic">Prims/Kruskals & Knapsack Problems.</span>
+        </div>
+        <div class="unit-card">
+            <h3>Unit IV</h3>
+            <span>Weightage: 25%</span>
+            <span class="hot-topic">N-Queens & TSP (B&B).</span>
+        </div>
+        <div class="unit-card">
+            <h3>Unit V</h3>
+            <span>Weightage: 15%</span>
+            <span class="hot-topic">NP-Complete Concepts & Randomized Sort.</span>
+        </div>
+    </div>
+
+    <footer>
+        Report Generated for Academic Reference | 21CSC204J Analysis
+    </footer>
+</div>
+
+</body>
+</html>
